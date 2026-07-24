@@ -1,0 +1,210 @@
+name,class,logP,logD,Vd_Lkg,PPB,MW,ILE_score,ILE_prob,ILE_kategori,AD,kalibrasyonda,ref_etiket,klinik_not
+ergocalciferol (D2),Yağda çözünen vitamin,7.641000000000008,4.6769915,7.4553847,100.0,396.6590000000001,65.1,99.5,Yüksek,ok,hayır,,Hiperkalsemi downstream
+cholecalciferol (D3),Yağda çözünen vitamin,7.619000000000008,4.597633,10.155252,100.0,384.6480000000002,60.0,99.4,Yüksek,ok,hayır,,Hiperkalsemi downstream; akut ILE sınırlı
+alpha-tocopherol (E),Yağda çözünen vitamin,8.840260000000002,4.569084,16.615982,100.0,430.7170000000003,60.0,99.4,Yüksek,ok,hayır,,
+permethrin,Organofosfat/Karbamat,6.113300000000004,4.4340086,5.6203384,100.0,391.2940000000001,70.0,99.3,Yüksek,ok,hayır,,
+phytonadione (K1),Yağda çözünen vitamin,9.1576,4.4599695,12.221076,100.0,450.7070000000002,60.0,99.3,Yüksek,ok,hayır,,
+lurasidone,Antipsikotik,4.255800000000003,4.376587,2.1589782,100.0,492.68900000000025,86.6,99.2,Yüksek,ok,hayır,,
+chlorpyrifos,Organofosfat,4.718100000000002,4.1468945,12.236392,93.71136,350.591,60.0,98.9,Yüksek,ok,hayır,,Atropin+pralidoksim
+felodipine,Kardiyak,3.9643000000000033,3.983485,6.1213336,100.0,384.259,68.5,98.6,Yüksek,ok,evet,responder,
+aripiprazole,Antipsikotik,4.859300000000005,3.788807,10.229128,100.0,448.39400000000006,60.0,98.2,Yüksek,ok,hayır,,
+ziprasidone,Antipsikotik,3.809000000000002,3.782283,4.4015975,100.0,412.9460000000002,74.3,98.2,Yüksek,ok,hayır,,
+retinol (A),Yağda çözünen vitamin,5.510300000000006,3.810311,3.7238815,94.71667,286.45900000000006,77.2,98.2,Yüksek,ok,hayır,,
+calcitriol,Yağda çözünen vitamin,5.704700000000008,3.8129082,7.829895,98.39876,416.6460000000002,64.2,98.2,Yüksek,ok,hayır,,Hiperkalsemi downstream
+nicardipine,Kardiyak,3.677800000000002,3.801056,2.7047691,100.0,479.5330000000002,82.7,98.2,Yüksek,ok,evet,responder,
+dronedarone,Kardiyak,7.0490000000000075,3.7440572,22.361752,99.380615,556.7690000000005,60.0,98.1,Yüksek,ok,hayır,,
+thioridazine,Antipsikotik,5.885600000000005,3.669458,9.458063,100.0,370.587,61.0,97.9,Yüksek,ok,hayır,,
+nimodipine,Kardiyak,2.9708000000000014,3.6035361,5.0939765,97.75722,418.44600000000014,71.7,97.7,Yüksek,ok,hayır,,
+amiodarone,Kardiyak,6.936200000000007,3.5605648,43.285877,91.314354,645.3190000000002,60.0,97.5,Yüksek,domain-kenarı (tahmin belirsiz),hayır,,
+limonene,Terpen/diğer,3.308900000000002,3.2665036,3.8860672,81.19765,136.23799999999997,76.4,96.3,Yüksek,ok,hayır,,
+loxapine,Antipsikotik,3.7714000000000025,3.2209709,12.149331,93.78779,327.8150000000001,60.0,96.1,Yüksek,ok,evet,responder,
+chlorpromazine,Antipsikotik,4.894400000000004,3.210977,13.292618,95.13185,318.8730000000001,60.0,96.0,Yüksek,ok,evet,responder,
+parathion,Organofosfat,3.2711000000000023,3.186409,0.4503313,70.26894,291.265,100.0,95.9,Yüksek,ok,hayır,,Atropin+pralidoksim
+oleandrin,Bitkisel alkaloid - kardiyotoksik,3.681000000000003,3.1710691,4.3543158,96.55908,576.7270000000004,74.4,95.8,Yüksek,ok,hayır,,Zakkum glikoziti; Fab denenir
+alpha-pinene (turpentine),Terpen/diğer,2.9987000000000013,3.103155,5.0187445,78.654686,136.238,72.0,95.4,Yüksek,ok,hayır,,
+clomipramine,Antidepresan,4.528400000000004,3.076704,12.333349,93.9924,314.86,60.0,95.3,Yüksek,ok,evet,responder,
+diazinon,Organofosfat,3.5847200000000026,3.0802336,2.8768277,73.185875,304.35200000000003,81.6,95.3,Yüksek,ok,hayır,,Atropin+pralidoksim
+sertraline,Antidepresan,5.179600000000004,3.0876613,14.146609,92.75796,306.236,60.0,95.3,Yüksek,ok,evet,responder,
+midazolam,Benzodiazepin/Sedatif,4.324220000000002,3.0593019,4.52391,90.924805,325.77400000000006,73.8,95.2,Yüksek,ok,hayır,,
+naphthalene,Terpen/diğer,2.839800000000001,3.001189,1.0447,81.23643,128.17399999999995,99.2,94.8,Yüksek,ok,hayır,,
+n-octane,Alifatik HC,3.3668000000000022,3.0020494,9.266637,78.989296,114.232,61.3,94.8,Yüksek,ok,hayır,,
+ergotamine,Bitkisel alkaloid - diğer,1.990800000000002,2.9964414,2.233238,93.14696,581.6730000000001,85.9,94.7,Yüksek,ok,hayır,,
+trazodone,Antidepresan,2.3617,2.9644864,6.808648,88.76622,371.8720000000001,65.9,94.5,Yüksek,ok,hayır,,
+clozapine,Antipsikotik,3.7227000000000023,2.9322574,13.220461,90.93022,326.83100000000013,58.6,94.3,Yüksek,ok,evet,responder,
+carvedilol,Kardiyak,3.738000000000002,2.92303,5.0119104,100.0,406.482,70.2,94.2,Yüksek,ok,evet,responder,
+verapamil,Kardiyak,5.093080000000005,2.9059033,4.232389,83.55342,454.6110000000002,72.6,94.1,Yüksek,ok,evet,responder,
+promethazine,Antihistaminik/Antikolinerjik,4.239400000000003,2.8935318,5.519824,86.08782,284.428,67.8,94.0,Yüksek,ok,hayır,,
+hydroxyzine,Antihistaminik/Antikolinerjik,3.055900000000001,2.888451,16.028366,88.788956,374.91200000000015,57.8,93.9,Yüksek,ok,hayır,,
+amitriptyline,Antidepresan,4.168600000000003,2.8326228,4.479927,89.3065,277.411,69.8,93.5,Yüksek,ok,evet,responder,
+trimipramine,Antidepresan,4.121000000000003,2.7911468,4.7259216,87.221664,294.442,67.9,93.1,Yüksek,ok,evet,responder,
+n-heptane,Alifatik HC,2.976700000000002,2.7602236,8.322264,73.01431,100.205,58.1,92.8,Yüksek,ok,hayır,,
+haloperidol,Antipsikotik,4.425600000000004,2.7435982,13.053484,86.16716,375.87100000000015,54.9,92.7,Yüksek,ok,evet,responder,
+olanzapine,Antipsikotik,3.4392200000000033,2.7323215,6.40693,88.68605,312.4420000000001,61.7,92.6,Yüksek,ok,evet,responder,
+cyclobenzaprine,Kas gevşetici,4.553800000000004,2.7291725,5.8565803,89.63025,275.39500000000004,63.0,92.5,Yüksek,ok,evet,responder,
+zolpidem,Benzodiazepin/Sedatif,3.2488400000000013,2.662147,1.0009384,85.916214,307.39700000000005,88.7,91.9,Yüksek,ok,hayır,,
+tetrachloroethylene,Halojenli HC,3.0682,2.6622086,9.968485,60.304127,165.834,53.3,91.9,Yüksek,ok,hayır,,
+nifedipine,Kardiyak,2.1756,2.6215343,-0.8947155,95.87877,346.33900000000006,87.4,91.4,Yüksek,ok,evet,responder,
+carbaryl,Organofosfat/Karbamat,2.5580000000000007,2.6126568,-2.8235252,82.16465,201.225,87.1,91.3,Yüksek,ok,hayır,,Atropin+pralidoksim
+berberine,Bitkisel alkaloid - diğer,3.096300000000001,2.597356,8.520243,89.469986,336.3670000000001,54.4,91.2,Yüksek,ok,hayır,,
+diazepam,Benzodiazepin/Sedatif,3.153800000000002,2.5972304,1.9271256,90.78731,284.74600000000004,76.7,91.2,Yüksek,ok,hayır,,
+fentanyl,Analjezik/Opioid,4.136700000000004,2.5880413,-0.19913311,76.63721,336.47900000000004,86.3,91.1,Yüksek,ok,hayır,,Nalokson; ILE deneysel
+o-xylene,Aromatik HC,2.30344,2.5538263,2.6720967,69.7259,106.16799999999999,70.6,90.7,Yüksek,ok,hayır,,
+imipramine,Antidepresan,3.8750000000000027,2.5417047,3.857837,85.54268,280.415,64.9,90.5,Yüksek,ok,evet,responder,
+ethylbenzene,Aromatik HC,2.2490000000000006,2.5378826,2.3504755,69.54809,106.16799999999996,72.0,90.5,Yüksek,ok,hayır,,
+warfarin,Diğer,3.609600000000003,2.5287423,-0.6682292,94.26591,308.3330000000001,84.3,90.4,Yüksek,ok,evet,non-responder,Vit K/PCC
+n-hexane,Alifatik HC,2.5866000000000007,2.5202236,7.2672906,66.77924,86.178,55.1,90.3,Yüksek,domain-kenarı (tahmin belirsiz),hayır,,
+taxine B,Bitkisel alkaloid - kardiyotoksik,3.277400000000002,2.5246625,2.123394,78.61434,583.7220000000003,73.1,90.3,Yüksek,ok,hayır,,
+buprenorphine,Analjezik/Opioid,4.413800000000004,2.5156198,8.670606,83.19839,467.6500000000003,52.4,90.2,Yüksek,ok,hayır,,Nalokson; ILE deneysel
+clonazepam,Benzodiazepin/Sedatif,3.037700000000001,2.487349,0.2964601,94.222435,315.716,82.9,89.9,Yüksek,ok,hayır,,
+levobupivacaine,Lokal anestezik,3.8965400000000026,2.4765341,2.406791,69.94672,288.43500000000006,70.0,89.7,Yüksek,ok,evet,responder,
+doxepin,Antidepresan,3.9624000000000033,2.4680066,5.0000067,84.987595,279.383,59.3,89.6,Yüksek,ok,evet,responder,
+lorazepam,Benzodiazepin/Sedatif,3.1013000000000015,2.4577565,5.289226,93.45528,321.163,58.2,89.5,Yüksek,ok,hayır,,
+tretinoin (retinoik asit),Yağda çözünen vitamin,5.602600000000005,2.4479744,-3.2421906,100.0,300.44200000000006,81.6,89.4,Yüksek,ok,hayır,,
+lewisite,KBRN-vezikan,2.2439,2.4413486,7.819832,60.880566,207.31900000000002,52.3,89.3,Yüksek,ok,hayır,,
+styrene,Aromatik HC,2.3296,2.4306903,0.7942947,67.783066,104.15199999999997,81.0,89.1,Yüksek,ok,hayır,,
+veratridine,Bitkisel alkaloid - kardiyotoksik,1.3560000000000005,2.4082847,6.012073,80.51565,673.8000000000003,55.3,88.8,Yüksek,domain-kenarı (tahmin belirsiz),hayır,,
+bupivacaine,Lokal anestezik,3.8965400000000026,2.400011,2.061818,68.460556,288.43500000000006,69.9,88.7,Yüksek,ok,evet,responder,
+risperidone,Antipsikotik,3.5904200000000026,2.3905168,7.269712,78.76888,410.4930000000003,52.2,88.6,Yüksek,ok,hayır,,
+digoxin,Kardiyak,2.218100000000003,2.3702369,5.520098,85.56338,780.9490000000002,55.6,88.3,Yüksek,domain-kenarı (tahmin belirsiz),evet,non-responder,Digoksin-Fab birincil
+quetiapine,Antipsikotik,2.8560000000000016,2.3272328,9.984543,83.20862,383.51700000000017,46.6,87.7,Yüksek,ok,evet,responder,
+carbon tetrachloride,Halojenli HC,2.5529,2.2956944,15.372419,62.042015,153.823,45.9,87.2,Yüksek,ok,hayır,,
+amoxapine,Antidepresan,3.4292000000000025,2.264214,12.138316,90.1465,313.788,45.3,86.7,Yüksek,ok,evet,responder,
+nebivolol,Kardiyak,2.363600000000001,2.2512014,9.052191,87.04861,405.44100000000014,46.3,86.5,Yüksek,ok,evet,responder,
+toluene,Aromatik HC,1.99502,2.230044,1.7008206,62.210682,92.14099999999999,67.5,86.1,Yüksek,domain-kenarı (tahmin belirsiz),hayır,,
+methadone,Analjezik/Opioid,4.292000000000004,2.2268262,2.7828498,68.94005,309.45300000000003,61.0,86.1,Yüksek,ok,hayır,,Nalokson; ILE deneysel
+malathion,Organofosfat,2.1218000000000004,2.209408,0.38049045,76.357864,330.3640000000001,73.6,85.8,Yüksek,ok,hayır,,Atropin+pralidoksim
+ondansetron,Diğer,3.1285200000000017,2.2038782,3.2718863,75.45841,293.37000000000006,58.3,85.7,Yüksek,ok,hayır,,
+nortriptyline,Antidepresan,3.826400000000003,2.1963913,3.8733552,86.71614,263.38399999999996,56.0,85.5,Yüksek,ok,evet,responder,
+phenytoin,Antikonvülzan,1.7696,2.189846,-4.7815685,87.55361,252.27300000000002,73.0,85.4,Yüksek,ok,hayır,,
+trichloroethylene,Halojenli HC,2.5017000000000005,2.175,8.775293,52.358135,131.389,45.1,85.2,Yüksek,ok,hayır,,
+sulfur mustard,KBRN-vezikan,2.1972000000000005,2.1714222,6.393859,52.25899,159.08100000000002,49.1,85.1,Yüksek,ok,hayır,,
+amlodipine,Kardiyak,2.266300000000001,2.1452327,6.740443,91.35698,408.88200000000006,47.8,84.6,Yüksek,ok,evet,responder,
+quinidine,Kardiyak,3.1732000000000014,2.125985,2.0847666,74.643845,324.4240000000001,61.8,84.3,Yüksek,ok,evet,responder,
+dibucaine,Lokal anestezik,3.4853000000000023,2.125883,16.04864,69.17773,343.471,42.5,84.3,Yüksek,ok,evet,responder,
+ropivacaine,Lokal anestezik,3.5064400000000013,2.1210563,1.5853503,63.083588,274.408,65.0,84.2,Yüksek,ok,evet,responder,
+mirtazapine,Antidepresan,2.4789000000000003,2.1130264,0.86778563,63.794518,265.36,70.4,84.0,Yüksek,ok,hayır,,
+alprazolam,Benzodiazepin/Sedatif,3.5801200000000017,2.0255334,1.4847448,85.69192,308.77200000000005,62.9,82.4,Yüksek,ok,hayır,,
+repaglinide,Antidiabetik,5.219900000000005,2.0256875,-1.9935467,99.75929,452.5950000000003,67.5,82.4,Yüksek,ok,hayır,,
+quinine,Antimalaryal,3.1732000000000014,2.0174048,2.7804947,71.022446,324.4240000000001,55.3,82.2,Yüksek,ok,evet,responder,
+fluoxetine,Antidepresan,4.435000000000003,1.998822,9.012733,84.90421,309.33099999999996,41.2,81.8,Yüksek,ok,hayır,,
+duloxetine,Antidepresan,4.630900000000003,1.9713501,5.5076,89.084305,297.423,46.2,81.2,Yüksek,ok,hayır,,
+tetracaine,Lokal anestezik,2.617000000000001,1.9665282,9.725319,70.14428,264.3689999999999,39.6,81.1,Yüksek,ok,evet,responder,
+paliperidone,Antipsikotik,3.081320000000002,1.9377073,8.203068,70.31611,426.49200000000025,41.0,80.5,Yüksek,ok,hayır,,
+"1,1,1-trichloroethane",Halojenli HC,2.376500000000001,1.9231224,10.489914,52.07783,133.405,38.5,80.2,Yüksek,ok,hayır,,
+yohimbine,Bitkisel alkaloid - diğer,2.6471000000000013,1.9176731,4.472948,76.72026,354.4500000000001,47.3,80.1,Yüksek,ok,hayır,,
+desipramine,Antidepresan,3.5328000000000026,1.9062309,2.9482982,83.54958,266.388,51.6,79.8,Yüksek,ok,evet,responder,
+maprotiline,Antidepresan,4.211400000000004,1.8895872,8.67023,80.54154,277.41100000000006,39.4,79.4,Yüksek,ok,evet,responder,
+carisoprodol,Kas gevşetici,2.0227,1.8855379,2.0274677,57.310326,260.334,55.1,79.3,Yüksek,ok,hayır,,
+dimenhydrinate,Antihistaminik/Antikolinerjik,2.967900000000001,1.8854948,7.8297744,82.14276,469.97300000000024,40.4,79.3,Yüksek,ok,hayır,,
+benzene,Aromatik HC,1.6866,1.8650427,0.66756904,53.09388,78.11399999999999,62.2,78.9,Yüksek,domain-kenarı (tahmin belirsiz),hayır,,
+chloroquine,Antimalaryal,4.810600000000004,1.8595272,49.12345,66.40279,319.88000000000005,37.2,78.7,Yüksek,ok,evet,responder,
+chlorpheniramine,Antihistaminik/Antikolinerjik,3.8186000000000027,1.8502061,11.527807,65.55715,274.795,37.0,78.5,Yüksek,ok,hayır,,
+chloroform,Halojenli HC,1.9864,1.8030596,9.22659,48.406303,119.37800000000001,36.9,77.4,Yüksek,ok,hayır,,
+carbamazepine,Antikonvülzan,3.3872000000000018,1.7932427,-4.532392,74.464775,236.274,59.8,77.2,Yüksek,ok,hayır,,
+propafenone,Kardiyak,3.2414000000000023,1.7664664,1.5307808,87.66903,341.4510000000001,54.5,76.5,Yüksek,ok,evet,responder,
+gelsemine,Bitkisel alkaloid - nörotoksik/diğer,2.0275999999999996,1.7501214,0.6103616,62.946785,322.408,58.3,76.1,Yüksek,ok,hayır,,
+benzocaine,Lokal anestezik,1.4455,1.727486,0.30338445,61.781727,165.19199999999998,57.6,75.5,Yüksek,ok,hayır,,
+soman,KBRN-sinir ajanı,3.230000000000002,1.7218649,0.335229,35.859856,182.17499999999998,57.4,75.4,Yüksek,ok,hayır,,Atropin+oksim+benzo; ILE standart değil
+cyclosarin,KBRN-sinir ajanı,3.1281000000000017,1.7203729,-0.8171546,38.58056,180.15899999999993,57.3,75.3,Yüksek,ok,hayır,,Atropin+oksim+benzo; ILE standart değil
+diphenhydramine,Antihistaminik/Antikolinerjik,3.3542000000000023,1.7072468,3.1177278,64.206154,255.36100000000002,45.7,75.0,Yüksek,ok,evet,responder,
+paroxetine,Antidepresan,3.326500000000002,1.6884524,5.845475,86.261246,329.3710000000001,39.0,74.5,Yüksek,ok,hayır,,
+hydroxychloroquine,Antimalaryal,3.783000000000002,1.6863003,49.333935,64.75633,335.8790000000001,33.7,74.4,Yüksek,ok,evet,responder,
+diltiazem,Kardiyak,3.368500000000002,1.6302977,-2.4178135,70.798615,414.52700000000016,54.3,72.9,Yüksek,ok,evet,responder,
+ivabradine,Kardiyak,3.3100000000000023,1.616869,1.0009575,60.17522,468.59400000000034,53.9,72.6,Yüksek,ok,hayır,,
+bupropion,Antidepresan,3.2993000000000023,1.5804462,9.174576,56.767883,239.746,32.4,71.5,Yüksek,ok,evet,responder,
+escitalopram,Antidepresan,3.812980000000003,1.5317243,5.1335144,62.214897,324.39900000000006,36.5,70.1,Yüksek,ok,hayır,,
+citalopram,Antidepresan,3.812980000000003,1.5256836,5.3264933,62.088917,324.39900000000006,36.1,70.0,Orta,ok,hayır,,
+losartan,Kardiyak,4.2668000000000035,1.5225568,-2.5851166,99.6523,422.9200000000001,50.8,69.9,Orta,ok,evet,non-responder,Yüksek-bağlı asit
+lamotrigine,Antikonvülzan,2.0098,1.5054103,4.591685,74.01495,256.09599999999995,36.9,69.4,Orta,ok,hayır,,
+BZ (QNB),KBRN-inkapasitan,2.5599,1.4719254,-0.4377644,61.964916,337.41900000000004,49.1,68.4,Orta,ok,hayır,,
+dextromethorphan,Diğer,3.3834000000000026,1.4690697,1.2858009,59.320854,271.404,46.8,68.3,Orta,ok,evet,responder,
+dichloromethane,Halojenli HC,1.4215,1.4699042,4.9793873,39.000496,84.93299999999999,35.3,68.3,Orta,domain-kenarı (tahmin belirsiz),hayır,,
+fluvoxamine,Antidepresan,3.201500000000001,1.4086189,10.174823,74.926384,318.339,28.2,66.4,Orta,ok,hayır,,
+mepivacaine,Lokal anestezik,2.7262400000000007,1.3769007,-1.1025807,47.749367,246.35399999999996,45.9,65.4,Orta,ok,evet,responder,
+glyburide,Antidiabetik,3.641700000000003,1.3242263,-4.4386864,99.47438,494.0130000000003,44.1,63.8,Orta,ok,evet,non-responder,Dekstroz/oktreotid
+tapentadol,Analjezik/Opioid,3.0835000000000017,1.3234228,4.776464,48.987965,221.34399999999997,32.1,63.7,Orta,ok,hayır,,Nalokson; ILE deneysel
+dichlorvos,Organofosfat,2.6804000000000006,1.3232634,3.3021526,48.37975,220.976,35.0,63.7,Orta,ok,hayır,,Atropin+pralidoksim
+ergometrine,Bitkisel alkaloid - diğer,1.5346000000000002,1.3038907,7.9232874,59.541466,325.4120000000001,27.8,63.1,Orta,ok,hayır,,
+clonidine,Kardiyak,2.3644999999999996,1.2940986,2.9441135,63.407795,230.09799999999998,35.0,62.8,Orta,ok,hayır,,
+emetine,Bitkisel alkaloid - diğer,4.943400000000005,1.2925106,4.1839814,71.1264,480.64900000000034,32.4,62.7,Orta,ok,hayır,,
+aconitine,Bitkisel alkaloid - kardiyotoksik,0.6481000000000043,1.2122247,8.280043,59.504387,645.7460000000003,25.6,60.1,Orta,domain-kenarı (tahmin belirsiz),hayır,,
+lidocaine,Lokal anestezik,2.5837400000000006,1.1400583,5.4077845,37.5696,234.343,26.9,57.7,Orta,ok,evet,responder,
+articaine,Lokal anestezik,2.16972,1.1318287,0.843699,62.433308,284.38100000000003,37.7,57.4,Orta,ok,hayır,,
+flecainide,Kardiyak,3.4407000000000014,1.1233621,4.975398,53.766315,414.34600000000006,27.0,57.1,Orta,ok,evet,responder,
+oxcarbazepine,Antikonvülzan,2.6422000000000008,1.0986512,-5.903531,68.03329,252.27299999999997,36.6,56.3,Orta,ok,hayır,,
+lobeline,Bitkisel alkaloid - nörotoksik/diğer,4.236000000000003,1.0908467,0.52897656,62.38214,337.463,36.4,56.0,Orta,ok,hayır,,
+strychnine,Bitkisel alkaloid - nörotoksik/diğer,2.0925000000000002,1.0300655,-0.49759308,47.518623,334.41900000000004,34.3,53.9,Orta,ok,hayır,,
+zopiclone,Benzodiazepin/Sedatif,1.5679999999999998,1.0283521,3.2654762,62.884083,388.8150000000001,27.2,53.8,Orta,ok,hayır,,
+aldicarb,Organofosfat/Karbamat,1.4698,1.005859,-1.9203491,30.544933,190.26799999999997,33.5,53.1,Orta,ok,hayır,,Atropin+pralidoksim
+physostigmine,Tıbbi karbamat,1.7739,0.9564915,1.1945808,45.0193,275.352,30.9,51.3,Orta,ok,hayır,,
+tabun,KBRN-sinir ajanı,1.25868,0.9299135,-2.6264071,26.869528,162.129,31.0,50.4,Orta,ok,hayır,,Atropin+oksim+benzo; ILE standart değil
+prilocaine,Lokal anestezik,2.3216200000000002,0.9079089,0.63269836,47.759327,220.316,30.3,49.7,Orta,ok,hayır,,
+VX,KBRN-sinir ajanı,3.6978000000000026,0.86466473,6.566825,17.166397,267.375,19.4,48.2,Orta,ok,hayır,,Atropin+oksim+benzo; ILE standart değil
+topiramate,Antikonvülzan,-0.3953999999999982,0.84347486,2.1284118,41.31641,339.3660000000001,24.4,47.4,Orta,ok,hayır,,
+ibuprofen,Analjezik/Opioid,3.073200000000001,0.8412649,-2.467538,81.41496,206.28499999999997,28.0,47.3,Orta,ok,hayır,,
+colchicine,Diğer,2.871600000000001,0.8247825,-2.281902,56.52997,399.4430000000002,27.5,46.8,Orta,ok,evet,non-responder,
+propranolol,Kardiyak,2.5775000000000006,0.82417095,4.4730215,66.00084,259.34900000000005,20.3,46.7,Orta,ok,evet,responder,
+nitrogen mustard (HN2),KBRN-vezikan,1.3958,0.8225819,4.657068,23.88324,156.056,20.1,46.7,Orta,ok,hayır,,
+cetirizine,Antihistaminik/Antikolinerjik,3.148200000000002,0.7829744,3.7709117,88.21438,388.8950000000002,20.1,45.3,Orta,ok,hayır,,
+acetaminophen,Kontrol (hidrofilik),1.3505999999999998,0.77809006,-0.42244762,43.478,151.165,25.9,45.2,Orta,ok,evet,non-responder,NAC birincil
+primaquine,Antimalaryal,2.782700000000001,0.75392425,18.165295,63.866936,259.35299999999995,15.1,44.3,Orta,ok,hayır,,
+tramadol,Analjezik/Opioid,2.6346000000000007,0.7292694,0.8346774,40.57985,263.3809999999999,24.3,43.5,Orta,ok,hayır,,Nalokson; ILE deneysel
+labetalol,Kardiyak,2.1353999999999997,0.7306586,3.8502274,61.303047,328.4120000000001,18.7,43.5,Orta,ok,hayır,,
+cocaine,Sempatomimetik/Uyarıcı,1.8677,0.67718714,-1.6203285,55.099976,303.35800000000006,22.6,41.7,Orta,ok,evet,responder,
+sarin,KBRN-sinir ajanı,2.2038,0.66060054,-2.3845348,11.515795,140.094,22.0,41.2,Orta,ok,hayır,,Atropin+oksim+benzo; ILE standart değil
+naproxen,Analjezik/Opioid,3.036500000000001,0.64225703,-4.1441994,89.110374,230.26299999999998,21.4,40.5,Orta,ok,hayır,,
+valproic acid,Antikonvülzan,2.2874,0.61118734,-2.0724366,50.579052,144.214,20.4,39.5,Düşük,ok,evet,non-responder,
+tizanidine,Kas gevşetici,1.7157999999999993,0.58966124,0.44621593,64.206665,253.718,19.7,38.8,Düşük,ok,hayır,,
+procaine,Lokal anestezik,1.7673999999999999,0.58256114,13.873795,36.903816,236.315,11.7,38.6,Düşük,ok,hayır,,
+hydrocodone,Analjezik/Opioid,1.9333,0.56987774,-1.5760542,44.505287,299.37000000000006,19.0,38.1,Düşük,ok,hayır,,Nalokson; ILE deneysel
+carbon monoxide,Gaz/asfiksiyan,-0.03751,0.48827353,0.47992212,19.594883,28.009999999999998,16.3,35.5,Düşük,domain-kenarı (tahmin belirsiz),hayır,,O2/HBO; ILE ilgisiz
+metoclopramide,Diğer,2.0023999999999997,0.47160214,13.998465,33.430668,299.8020000000001,9.4,35.0,Düşük,ok,evet,non-responder,
+phenobarbital,Antikonvülzan,0.7004,0.4657423,-3.2890153,61.870617,232.23899999999995,15.5,34.8,Düşük,ok,hayır,,
+hydralazine,Kardiyak,0.9153999999999998,0.40742773,-0.4254985,42.92196,160.17999999999998,13.6,33.0,Düşük,ok,hayır,,
+mexiletine,Kardiyak,2.0294399999999997,0.39254734,2.7279506,42.185577,179.26299999999998,10.8,32.5,Düşük,ok,hayır,,
+venlafaxine,Antidepresan,3.0356000000000014,0.3878824,1.1749461,27.354593,277.4079999999999,12.6,32.4,Düşük,ok,hayır,,
+disopyramide,Kardiyak,3.361900000000002,0.35864422,5.257655,34.666252,339.4830000000001,8.5,31.5,Düşük,ok,hayır,,
+codeine,Analjezik/Opioid,1.5010999999999999,0.35991833,0.42077652,31.386438,299.3700000000001,12.0,31.5,Düşük,ok,evet,non-responder,Nalokson
+scopolamine,Bitkisel alkaloid - nörotoksik/diğer,0.9180999999999995,0.3063124,1.0231872,40.983253,303.358,10.2,29.9,Düşük,ok,hayır,,Antikolinerjik; fizostigmin
+glipizide,Antidiabetik,2.0781199999999993,0.25532076,-3.1131816,91.36812,445.54500000000024,8.5,28.5,Düşük,ok,evet,non-responder,
+oxycodone,Analjezik/Opioid,1.0481999999999998,0.23520148,-1.1926463,36.82373,315.3690000000001,7.8,27.9,Düşük,ok,hayır,,Nalokson; ILE deneysel
+gliclazide,Antidiabetik,1.6298199999999994,0.232586,-2.802971,90.52455,323.4180000000001,7.8,27.8,Düşük,ok,evet,non-responder,
+grayanotoxin I,Bitkisel alkaloid - kardiyotoksik,0.7390999999999996,0.12247236,2.2353334,26.049103,412.5230000000002,3.5,24.9,Düşük,ok,hayır,,Deli bal; atropin-yanıtlı
+theophylline,Sempatomimetik/Uyarıcı,-1.0397000000000005,0.028131818,-1.961673,31.128784,180.16699999999997,0.9,22.5,Düşük,ok,evet,non-responder,
+valsartan,Kardiyak,4.161700000000002,-0.027673984,-3.56109,98.22892,435.52800000000013,0.0,21.2,Düşük,ok,evet,non-responder,Yüksek-bağlı asit
+esmolol,Kardiyak,1.5298999999999996,-0.07087312,0.29035845,46.928936,295.379,0.0,20.2,Düşük,ok,hayır,,
+methanol,Toksik alkol/Kontrol,-0.3915,-0.09163003,1.7735313,10.482529,32.042,0.0,19.7,Düşük,domain-kenarı (tahmin belirsiz),evet,non-responder,Fomepizol/HD
+hyoscyamine,Bitkisel alkaloid - nörotoksik/diğer,1.9308999999999996,-0.116361335,0.6093162,36.453575,289.37500000000006,0.0,19.2,Düşük,ok,hayır,,Antikolinerjik
+pilocarpine,Bitkisel alkaloid - diğer,1.1618000000000002,-0.12880144,-0.814226,21.187916,208.261,0.0,18.9,Düşük,ok,hayır,,
+atropine,Bitkisel alkaloid - nörotoksik/diğer,1.9308999999999996,-0.16834073,0.86005086,35.691986,289.37500000000006,0.0,18.1,Düşük,ok,hayır,,Antikolinerjik; fizostigmin
+amphetamine,Sempatomimetik/Uyarıcı,1.5763,-0.17628017,-1.2622333,23.266285,135.20999999999998,0.0,17.9,Düşük,ok,evet,non-responder,
+caffeine,Sempatomimetik/Uyarıcı,-1.0293,-0.17773934,-2.0640101,21.092136,194.194,0.0,17.9,Düşük,ok,evet,non-responder,
+morphine,Analjezik/Opioid,1.1981,-0.2187384,0.72856045,28.56837,285.343,0.0,17.1,Düşük,ok,evet,non-responder,Nalokson
+nicotine,Sempatomimetik/Uyarıcı,1.8483,-0.23382024,1.06899,12.481003,162.236,0.0,16.8,Düşük,ok,hayır,,
+bisoprolol,Kardiyak,2.3659,-0.28080267,6.620057,30.15072,325.449,0.0,15.9,Düşük,ok,hayır,,
+MDMA,Sempatomimetik/Uyarıcı,1.5656999999999999,-0.32606262,1.0542907,31.31161,193.24599999999995,0.0,15.1,Düşük,ok,hayır,,
+ethanol,Toksik alkol/Kontrol,-0.0014000000000000123,-0.32262343,2.2366123,10.944548,46.069,0.0,15.1,Düşük,domain-kenarı (tahmin belirsiz),evet,non-responder,
+sparteine,Bitkisel alkaloid - nörotoksik/diğer,2.3451000000000004,-0.32709295,3.4695187,18.901867,234.38699999999992,0.0,15.0,Düşük,ok,hayır,,
+theobromine,Bitkisel alkaloid - diğer,-1.0397,-0.3371026,-2.4648595,40.23481,180.16699999999997,0.0,14.9,Düşük,ok,hayır,,
+isopropanol,Toksik alkol/Kontrol,0.38710000000000006,-0.375511,2.8181624,8.380753,60.096000000000004,0.0,14.2,Düşük,domain-kenarı (tahmin belirsiz),evet,non-responder,
+methamphetamine,Sempatomimetik/Uyarıcı,1.837,-0.39284983,0.07753048,18.48789,149.237,0.0,13.9,Düşük,ok,hayır,,
+levetiracetam,Antikonvülzan,-0.12729999999999997,-0.4203527,-3.4524112,15.546335,170.212,0.0,13.5,Düşük,ok,evet,non-responder,
+metoprolol,Kardiyak,1.6132,-0.44112474,2.317397,29.201416,267.36899999999997,0.0,13.1,Düşük,ok,evet,responder,
+baclofen,Kas gevşetici,1.857,-0.48689872,-0.32363892,56.63859,213.664,0.0,12.4,Düşük,ok,evet,non-responder,
+nadolol,Kardiyak,0.6347999999999998,-0.5290716,1.9982439,25.44958,309.406,0.0,11.8,Düşük,ok,evet,non-responder,Hidrofilik BB
+pseudoephedrine,Sempatomimetik/Uyarıcı,1.3278999999999999,-0.54916257,0.3163905,16.590923,165.236,0.0,11.5,Düşük,ok,evet,non-responder,
+ephedrine,Sempatomimetik/Uyarıcı,1.3278999999999999,-0.6839608,0.76150846,14.221982,165.236,0.0,9.7,Düşük,ok,evet,non-responder,
+salicylic acid,Diğer,1.0903999999999998,-0.71191436,-1.2238687,62.335552,138.12199999999999,0.0,9.4,Düşük,ok,evet,non-responder,Alkalinizasyon/HD
+coniine,Bitkisel alkaloid - nörotoksik/diğer,1.9286,-0.8137783,2.4645226,8.953046,127.23100000000001,0.0,8.3,Düşük,ok,hayır,,
+sotalol,Kardiyak,1.0895000000000001,-0.9198109,1.2882292,21.913534,272.37,0.0,7.2,Düşük,ok,evet,non-responder,Hidrofilik BB
+pyridostigmine,Tıbbi karbamat,0.5714999999999999,-0.97199476,2.323866,0.3185257,181.21499999999997,0.0,6.7,Düşük,ok,hayır,,
+aspirin,Analjezik/Opioid,1.3101,-0.9874226,-2.7047992,63.297436,180.15899999999996,0.0,6.6,Düşük,ok,evet,non-responder,Alkalinizasyon/HD
+pregabalin,Antikonvülzan,1.0821,-1.0004513,-2.796222,30.15835,159.229,0.0,6.5,Düşük,ok,evet,non-responder,
+ethylene glycol,Toksik alkol/Kontrol,-1.0290000000000001,-1.0297887,3.2557683,6.5757475,62.068000000000005,0.0,6.2,Düşük,domain-kenarı (tahmin belirsiz),evet,non-responder,Fomepizol/HD
+cytisine,Bitkisel alkaloid - nörotoksik/diğer,0.5549999999999999,-1.1009674,-1.7530434,7.2333574,190.24599999999998,0.0,5.7,Düşük,ok,hayır,,
+atenolol,Kardiyak,0.45210000000000006,-1.3317196,-2.2590365,15.246504,266.34099999999995,0.0,4.2,Düşük,ok,evet,non-responder,Hidrofilik BB
+gabapentin,Antikonvülzan,1.3702999999999994,-1.3309205,-4.525447,23.767841,171.23999999999992,0.0,4.2,Düşük,ok,evet,non-responder,
+neostigmine,Tıbbi karbamat,1.9437,-1.5827348,-0.009021854,0.0,223.29599999999996,0.0,3.0,Düşük,ok,hayır,,
+metformin,Kontrol (hidrofilik),-1.243829999999999,-1.7441984,-1.5045974,0.0,129.167,0.0,2.4,Düşük,ok,evet,non-responder,Hidrofilik; HD
+glyphosate,Herbisit,-1.2042000000000002,-2.0975406,-0.9264423,27.728994,169.073,0.0,1.5,Düşük,ok,hayır,,
+paraquat,Herbisit,1.0025999999999995,-2.5014637,15.7303295,0.0,186.258,0.0,0.9,Düşük,ok,hayır,,
