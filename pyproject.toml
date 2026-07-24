@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ile-predict"
+version = "0.1.0"
+description = "Lipid emulsion (ILE) amenability prediction from chemical structure (research prototype)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Mehmet Tatlı" }]
+keywords = ["toxicology", "lipid emulsion", "ADMET", "emergency medicine", "cheminformatics"]
+dependencies = [
+  "admet_ai>=1.3.0", "rdkit>=2023.9", "scikit-learn>=1.3",
+  "pubchempy>=1.0.4", "pandas>=2.0", "numpy>=1.24",
+]
+
+[project.scripts]
+ile-predict = "ile_predict.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ile_predict*"]

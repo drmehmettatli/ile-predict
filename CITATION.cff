@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "ile-predict: Lipid emulsion amenability prediction from chemical structure"
+message: "If you use this software, please cite it and the ADMET-AI paper."
+type: software
+authors:
+  - family-names: "Tatlı"
+    given-names: "Mehmet"
+version: 0.1.0
+license: MIT
+references:
+  - type: article
+    title: "ADMET-AI: a machine learning ADMET platform for evaluation of large-scale chemical libraries"
+    authors:
+      - family-names: "Swanson"
+        given-names: "Kyle"
+    journal: "Bioinformatics"
+    volume: 40
+    issue: 7
+    year: 2024
+    notes: "btae416"
