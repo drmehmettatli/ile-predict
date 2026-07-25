@@ -1,6 +1,7 @@
 # ile-predict
 
 [![tests](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml/badge.svg)](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21547460.svg)](https://doi.org/10.5281/zenodo.21547460)
 
 **Predicting intravenous lipid emulsion (ILE / "lipid rescue") amenability from chemical structure.**
 
@@ -71,9 +72,18 @@ real drugs — so it is excluded from the primary model. See [`docs/methods.md`]
 
 ## Citing / provenance
 
+If you use this software, please cite the archived release:
+
+> Tatlı, M. (2026). *ile-predict: A structure-based prediction system for intravenous lipid
+> emulsion amenability in acute poisoning* (v0.1.0). Zenodo.
+> https://doi.org/10.5281/zenodo.21547460
+
+The DOI above always resolves to the latest version. Machine-readable metadata is in
+`CITATION.cff` (GitHub's "Cite this repository" button) and `.zenodo.json`.
+
 ADMET predictions: Swanson et al., *ADMET-AI*, **Bioinformatics** 2024;40(7):btae416.
 Structures: PubChem. Calibration labels: literature consensus (expert-assigned).
-See `CITATION.cff`. Licensed under MIT (`LICENSE`).
+Licensed under MIT (`LICENSE`).
 
 ## Disclaimer
 
