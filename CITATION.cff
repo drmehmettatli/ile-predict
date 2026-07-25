@@ -16,8 +16,18 @@ abstract: >-
   ILE responsiveness. Research and education prototype; not a clinical decision
   tool.
 version: 0.1.0
+date-released: "2026-07-25"
+doi: 10.5281/zenodo.21547460
 license: MIT
 repository-code: "https://github.com/drmehmettatli/ile-predict"
+url: "https://doi.org/10.5281/zenodo.21547460"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21547460
+    description: "Concept DOI - always resolves to the latest version"
+  - type: doi
+    value: 10.5281/zenodo.21547461
+    description: "DOI of version v0.1.0"
 keywords:
   - intravenous lipid emulsion
   - lipid rescue
