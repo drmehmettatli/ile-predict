@@ -1,5 +1,7 @@
 # ile-predict
 
+[![tests](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml/badge.svg)](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml)
+
 **Predicting intravenous lipid emulsion (ILE / "lipid rescue") amenability from chemical structure.**
 
 `ile-predict` estimates how amenable a toxic substance is to intravenous lipid
