@@ -1,12 +1,33 @@
 cff-version: 1.2.0
-title: "ile-predict: Lipid emulsion amenability prediction from chemical structure"
+title: "ile-predict: A structure-based prediction system for intravenous lipid emulsion amenability in acute poisoning"
 message: "If you use this software, please cite it and the ADMET-AI paper."
 type: software
 authors:
   - family-names: "Tatlı"
     given-names: "Mehmet"
+    orcid: "https://orcid.org/0000-0001-5907-9161"
+    affiliation: "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience (PhD Programme), Van Yüzüncü Yıl University, Van, Türkiye"
+abstract: >-
+  ile-predict estimates how amenable a toxic agent is to intravenous lipid
+  emulsion (ILE, "lipid rescue") therapy directly from chemical structure.
+  Physicochemical descriptors are predicted with ADMET-AI, and a logistic model
+  calibrated against a 76-drug literature-consensus responder / non-responder
+  reference set converts effective lipophilicity (logD7.4) into a probability of
+  ILE responsiveness. Research and education prototype; not a clinical decision
+  tool.
 version: 0.1.0
 license: MIT
+repository-code: "https://github.com/drmehmettatli/ile-predict"
+keywords:
+  - intravenous lipid emulsion
+  - lipid rescue
+  - clinical toxicology
+  - emergency medicine
+  - poisoning
+  - ADMET
+  - cheminformatics
+  - lipophilicity
+  - machine learning
 references:
   - type: article
     title: "ADMET-AI: a machine learning ADMET platform for evaluation of large-scale chemical libraries"
@@ -17,4 +38,5 @@ references:
     volume: 40
     issue: 7
     year: 2024
+    doi: "10.1093/bioinformatics/btae416"
     notes: "btae416"
