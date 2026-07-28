@@ -24,7 +24,7 @@ emulsion therapy, directly from its structure. It combines
 
 | You want to… | Use | Install |
 |---|---|---|
-| **Look up a named drug** (score, category, rank, caveats) | the **search dashboard** — `app/dashboard.html`, open in any browser | none |
+| **Look up a named drug** (score, category, rank, caveats) | the **live search dashboard** → [drmehmettatli.github.io/ile-predict](https://drmehmettatli.github.io/ile-predict/) (or open `app/dashboard.html` locally) | none |
 | Look up / batch drugs on the command line or in Python | the **light** package (`ile-predict "lurasidone, nimodipine"`) | `pip install "ile-predict @ git+https://github.com/drmehmettatli/ile-predict.git"` |
 | **Score a novel structure** (a SMILES or a drug not yet bundled) | the **full** stack, or the notebook below | `pip install "ile-predict[full] @ git+https://github.com/drmehmettatli/ile-predict.git"` |
 | Score novel structures with **zero local install** | the Colab notebook → | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb) |
@@ -46,8 +46,9 @@ download. Only a genuinely novel structure invokes the full prediction stack.
 
 ## Quick start
 
-**Zero install — the dashboard.** Download `app/dashboard.html` and open it in a
-browser. Type a drug name in the search box to get its amenability score, category,
+**Zero install — the dashboard.** Open
+**<https://drmehmettatli.github.io/ile-predict/>** (or download `app/dashboard.html`
+and open it in any browser — it is self-contained and runs offline). Type a drug name in the search box to get its amenability score, category,
 rank among 2,845 approved drugs, applicability-domain flag, and mechanism caveats.
 Common abbreviations and brand/street names resolve automatically (e.g. `THC` →
 dronabinol, `CBD` → cannabidiol, `ASA` → aspirin, `Seroquel` → quetiapine); the full
