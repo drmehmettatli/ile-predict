@@ -8,7 +8,14 @@ a literature-consensus ILE-evidence reference set.
 
 NOT A CLINICAL DECISION TOOL. Hypothesis generation for research only.
 """
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
-from .predict import score_smiles, score_batch          # noqa: F401
-from .calibrate import CalibratedILEModel               # noqa: F401
+# Light-weight, always-available API (offline lookup + calibration).
+from .lookup import lookup, suggest, count_bundled       # noqa: F401
+from .calibrate import CalibratedILEModel                # noqa: F401
+
+# Structure scoring needs the optional [full] stack (ADMET-AI, RDKit). The imports
+# below are lazy inside the functions, so importing this package stays light; a
+# missing stack only raises when you actually score a novel structure.
+from .predict import score_smiles, score_batch           # noqa: F401
+
