@@ -76,3 +76,15 @@ def test_lookup_unknown_returns_none_and_suggests():
 def test_bundled_count_is_large():
     from ile_predict import count_bundled
     assert count_bundled() > 2500
+
+
+def test_alias_resolution():
+    from ile_predict import lookup
+    r = lookup("thc")
+    assert r is not None and r["matched"].lower() == "dronabinol"
+    assert r["alias_of"] is not None
+    # a direct entry is not treated as an alias
+    d = lookup("lurasidone")
+    assert d["alias_of"] is None
+    # brand name resolves to canonical
+    assert lookup("seroquel")["matched"].lower() == "quetiapine"
