@@ -49,6 +49,9 @@ download. Only a genuinely novel structure invokes the full prediction stack.
 **Zero install — the dashboard.** Download `app/dashboard.html` and open it in a
 browser. Type a drug name in the search box to get its amenability score, category,
 rank among 2,845 approved drugs, applicability-domain flag, and mechanism caveats.
+Common abbreviations and brand/street names resolve automatically (e.g. `THC` →
+dronabinol, `CBD` → cannabidiol, `ASA` → aspirin, `Seroquel` → quetiapine); the full
+map is `data/aliases.csv`.
 
 **Light install — instant offline lookup** (core only: pandas, numpy, scikit-learn):
 
