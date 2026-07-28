@@ -1,36 +1,36 @@
 {
-    "title": "ile-predict (TATLI framework): A structure-based prediction system for intravenous lipid emulsion amenability in acute poisoning",
-    "upload_type": "software",
-    "license": "MIT",
-    "creators": [
-          {
-                  "name": "Tatli, Mehmet",
-                  "orcid": "0000-0001-5907-9161",
-                  "affiliation": "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience (PhD Programme), Van Yüzüncü Yıl University, Van, Türkiye"
-          }
-    ],
-    "description": "<p><strong>ile-predict</strong> is the reference implementation of the <strong>TATLI framework (Toxin Amenability To Lipid Infusion)</strong>, developed in the Van Computational Emergency Toxicology group at Van Yuzuncu Yil University and the University of Health Sciences (Van Training and Research Hospital), Van, Turkiye. It estimates how amenable a toxic agent is to intravenous lipid emulsion (ILE, &quot;lipid rescue&quot;) therapy, directly from chemical structure. Physicochemical descriptors are predicted with ADMET-AI, and a logistic model calibrated against a 76-drug literature-consensus responder / non-responder reference set converts effective lipophilicity into a probability of ILE responsiveness (leave-one-out cross-validated ROC-AUC approximately 0.93).</p><p>The package ships a mechanistic lipid-sink theory score (logD7.4 gate modulated by volume of distribution), a scored panel of 209 emergency-toxicology agents across 31 classes, a self-contained interactive dashboard, applicability-domain flagging for molecules outside the drug-like range, a command-line interface and a Python API.</p><p>Method note: volume of distribution is deliberately excluded from the calibrated model. Adding it raises AUC slightly but flips its coefficient positive, contrary to lipid-sink theory - a collinearity artefact, since lipophilic bases already have high Vd in real drug space.</p><p><strong>Research and education prototype. This is not a clinical decision tool</strong> and must not be used to guide patient care.</p>",
-    "keywords": [
-          "TATLI framework",
-          "TATLI amenability score",
-          "intravenous lipid emulsion",
-          "lipid rescue",
-          "clinical toxicology",
-          "emergency medicine",
-          "poisoning",
-          "ADMET",
-          "cheminformatics",
-          "lipophilicity",
-          "logD",
-          "machine learning",
-          "Van Yuzuncu Yil University"
-    ],
-    "related_identifiers": [
-          {
-                  "identifier": "10.1093/bioinformatics/btae416",
-                  "relation": "cites",
-                  "scheme": "doi",
-                  "resource_type": "publication-article"
-          }
-    ]
+  "title": "ile-predict (TATLI framework): A structure-based prediction system for intravenous lipid emulsion amenability in acute poisoning",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Tatli, Mehmet",
+      "orcid": "0000-0001-5907-9161",
+      "affiliation": "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience (PhD Programme), Van Yüzüncü Yıl University, Van, Türkiye"
+    }
+  ],
+  "description": "<p><strong>ile-predict</strong> is the reference implementation of the <strong>TATLI framework (Toxin Amenability To Lipid Infusion)</strong>, developed in the Van Computational Emergency Toxicology group at Van Yuzuncu Yil University and the University of Health Sciences (Van Training and Research Hospital), Van, Turkiye. It estimates how amenable a toxic agent is to intravenous lipid emulsion (ILE, &quot;lipid rescue&quot;) therapy, directly from chemical structure. Physicochemical descriptors are predicted with ADMET-AI, and a logistic model calibrated against a 76-drug literature-consensus responder / non-responder reference set converts effective lipophilicity into a probability of ILE responsiveness (leave-one-out cross-validated ROC-AUC approximately 0.93).</p><p>The package ships a mechanistic lipid-sink theory score (logD7.4 gate modulated by volume of distribution), a scored panel of 209 emergency-toxicology agents across 31 classes, a self-contained interactive dashboard, applicability-domain flagging for molecules outside the drug-like range, a command-line interface and a Python API.</p><p>Method note: volume of distribution is deliberately excluded from the calibrated model. Adding it raises AUC slightly but flips its coefficient positive, contrary to lipid-sink theory - a collinearity artefact, since lipophilic bases already have high Vd in real drug space.</p><p><strong>Research and education prototype. This is not a clinical decision tool</strong> and must not be used to guide patient care.</p>",
+  "keywords": [
+    "TATLI framework",
+    "TATLI amenability score",
+    "intravenous lipid emulsion",
+    "lipid rescue",
+    "clinical toxicology",
+    "emergency medicine",
+    "poisoning",
+    "ADMET",
+    "cheminformatics",
+    "lipophilicity",
+    "logD",
+    "machine learning",
+    "Van Yuzuncu Yil University"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1093/bioinformatics/btae416",
+      "relation": "cites",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ]
 }
