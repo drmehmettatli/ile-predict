@@ -1,9 +1,11 @@
 # ile-predict
 
-[![tests](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml/badge.svg)](https://github.com/drmehmettatli/ile-predict/actions/workflows/test.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21547460.svg)](https://doi.org/10.5281/zenodo.21547460)
-
+**The TATLI framework — Toxin Amenability To Lipid Infusion.**
 **Predicting intravenous lipid emulsion (ILE / "lipid rescue") amenability from chemical structure.**
+
+Developed in the **Van Computational Emergency Toxicology** group at Van Yüzüncü Yıl
+University and the University of Health Sciences (Van Training and Research Hospital),
+Van, Türkiye, by **Mehmet Tatlı** ([ORCID 0000-0001-5907-9161](https://orcid.org/0000-0001-5907-9161)).
 
 `ile-predict` estimates how amenable a toxic substance is to intravenous lipid
 emulsion therapy, directly from its structure. It combines
@@ -23,7 +25,8 @@ emulsion therapy, directly from its structure. It combines
 1. **Structure in** — a drug/toxin name (resolved to SMILES via PubChem) or a raw SMILES.
 2. **Predict** — ADMET-AI computes `logP`, `logD7.4`, `Vd`, plasma protein binding.
 3. **Score** — a mechanistic *theory score* (lipophilicity gate × Vd modulator) **and**
-   a *calibrated probability* from the logistic model.
+   a *calibrated probability* from the logistic model, reported as the **TATLI amenability
+   score** (Toxin Amenability To Lipid Infusion).
 4. **Flag** — molecules outside ADMET-AI's drug-like domain (MW <100 or >600) are
    marked `domain-edge`; a low score there means "unreliable", not "not a candidate".
 
@@ -70,20 +73,24 @@ real drugs — so it is excluded from the primary model. See [`docs/methods.md`]
 - Recalibrate against measured *in-vitro* lipid:aqueous sequestration data.
 - Package a hosted web app (Streamlit/FastAPI) and a DrugBank/ChEMBL-scale screen.
 
-## Citing / provenance
+## How to cite
 
-If you use this software, please cite the archived release:
+If you use this software or the TATLI amenability score, please cite the archived
+release and the accompanying manuscript:
 
-> Tatlı, M. (2026). *ile-predict: A structure-based prediction system for intravenous lipid
-> emulsion amenability in acute poisoning* (v0.1.0). Zenodo.
-> https://doi.org/10.5281/zenodo.21547460
+> Tatlı M. *ile-predict (TATLI framework): a structure-based prediction system for
+> intravenous lipid emulsion amenability in acute poisoning.* Van Computational
+> Emergency Toxicology, Van Yüzüncü Yıl University and University of Health Sciences,
+> Van, Türkiye. Zenodo. https://doi.org/10.5281/zenodo.21547460 (concept DOI; use the
+> versioned DOI for the exact release you ran).
 
-The DOI above always resolves to the latest version. Machine-readable metadata is in
-`CITATION.cff` (GitHub's "Cite this repository" button) and `.zenodo.json`.
+> Tatlı M. *Physicochemical amenability to intravenous lipid emulsion does not predict
+> which poisonings have been studied: a structure-based screen of 209 toxic agents and
+> 2845 approved drugs.* Manuscript in preparation, 2026.
 
 ADMET predictions: Swanson et al., *ADMET-AI*, **Bioinformatics** 2024;40(7):btae416.
 Structures: PubChem. Calibration labels: literature consensus (expert-assigned).
-Licensed under MIT (`LICENSE`).
+See `CITATION.cff`. Licensed under MIT (`LICENSE`).
 
 ## Disclaimer
 

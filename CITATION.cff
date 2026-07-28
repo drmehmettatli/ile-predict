@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-title: "ile-predict: A structure-based prediction system for intravenous lipid emulsion amenability in acute poisoning"
-message: "If you use this software, please cite it and the ADMET-AI paper."
+title: "ile-predict (TATLI framework): A structure-based prediction system for intravenous lipid emulsion amenability in acute poisoning"
+message: "If you use this software or the TATLI amenability score, please cite it and the ADMET-AI paper."
 type: software
 authors:
-  - family-names: "Tatlı"
+  - family-names: "Tatli"
     given-names: "Mehmet"
     orcid: "https://orcid.org/0000-0001-5907-9161"
     affiliation: "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience (PhD Programme), Van Yüzüncü Yıl University, Van, Türkiye"
@@ -16,19 +16,11 @@ abstract: >-
   ILE responsiveness. Research and education prototype; not a clinical decision
   tool.
 version: 0.1.0
-date-released: "2026-07-25"
-doi: 10.5281/zenodo.21547460
 license: MIT
 repository-code: "https://github.com/drmehmettatli/ile-predict"
-url: "https://doi.org/10.5281/zenodo.21547460"
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.21547460
-    description: "Concept DOI - always resolves to the latest version"
-  - type: doi
-    value: 10.5281/zenodo.21547461
-    description: "DOI of version v0.1.0"
 keywords:
+  - TATLI framework
+  - TATLI amenability score
   - intravenous lipid emulsion
   - lipid rescue
   - clinical toxicology
@@ -38,6 +30,7 @@ keywords:
   - cheminformatics
   - lipophilicity
   - machine learning
+  - Van Yuzuncu Yil University
 references:
   - type: article
     title: "ADMET-AI: a machine learning ADMET platform for evaluation of large-scale chemical libraries"
