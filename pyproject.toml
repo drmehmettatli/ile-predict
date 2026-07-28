@@ -4,17 +4,23 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ile-predict"
-version = "0.1.0"
+version = "0.2.0"
 description = "Lipid emulsion (ILE) amenability prediction from chemical structure (research prototype)"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.9"
 authors = [{ name = "Mehmet Tatlı" }]
 keywords = ["toxicology", "lipid emulsion", "ADMET", "emergency medicine", "cheminformatics"]
+
+# Core install is light: offline lookup of the 2845 + 209 bundled agents and
+# recalibration work with just these. Scoring a *novel* structure needs the
+# heavy prediction stack, installed via the [full] extra.
 dependencies = [
-  "admet_ai>=1.3.0", "rdkit>=2023.9", "scikit-learn>=1.3",
-  "pubchempy>=1.0.4", "pandas>=2.0", "numpy>=1.24",
+  "pandas>=2.0", "numpy>=1.24", "scikit-learn>=1.3",
 ]
+
+[project.optional-dependencies]
+full = ["admet_ai>=1.3.0", "rdkit>=2023.9", "pubchempy>=1.0.4"]
 
 [project.scripts]
 ile-predict = "ile_predict.cli:main"

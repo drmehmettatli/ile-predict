@@ -20,6 +20,20 @@ emulsion therapy, directly from its structure. It combines
 > drug (e.g. carbon-monoxide/haemoglobin binding, vitamin-D hypercalcaemia). Real
 > ILE decisions follow current guidelines (e.g. ASRA/AAGBI) and clinical judgment.
 
+## Which path is for you?
+
+| You want to… | Use | Install |
+|---|---|---|
+| **Look up a named drug** (score, category, rank, caveats) | the **search dashboard** — `app/dashboard.html`, open in any browser | none |
+| Look up / batch drugs on the command line or in Python | the **light** package (`ile-predict "lurasidone, nimodipine"`) | `pip install ile-predict` |
+| **Score a novel structure** (a SMILES or a drug not yet bundled) | the **full** stack, or the notebook below | `pip install "ile-predict[full]"` |
+| Score novel structures with **zero local install** | the Colab notebook → | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb) |
+
+The dashboard and the light package answer instantly for **~2,900 pre-scored agents**
+(209-agent curated panel + 2,845 approved drugs) **with no heavy dependencies** — the
+common "what does *this drug* score?" question needs no ADMET-AI, no PyTorch, no
+download. Only a genuinely novel structure invokes the full prediction stack.
+
 ## What it does
 
 1. **Structure in** — a drug/toxin name (resolved to SMILES via PubChem) or a raw SMILES.
@@ -32,14 +46,35 @@ emulsion therapy, directly from its structure. It combines
 
 ## Quick start
 
+**Zero install — the dashboard.** Download `app/dashboard.html` and open it in a
+browser. Type a drug name in the search box to get its amenability score, category,
+rank among 2,845 approved drugs, applicability-domain flag, and mechanism caveats.
+
+**Light install — instant offline lookup** (core only: pandas, numpy, scikit-learn):
+
 ```bash
-pip install -r requirements.txt      # rdkit, admet_ai, scikit-learn, pubchempy, pandas
-pip install -e .
+pip install "ile-predict @ git+https://github.com/drmehmettatli/ile-predict.git"
+# or from a clone:  pip install -r requirements.txt && pip install -e .
 
-# by name
-ile-predict "verapamil, bupivacaine, oleandrin, metformin"
+ile-predict "lurasidone, nimodipine, oleandrin, metformin"   # answered from bundled tables
+ile-predict "verapamil" --json                               # machine-readable output
+```
 
-# by SMILES
+```python
+from ile_predict import lookup
+
+rec = lookup("lurasidone")
+print(rec["ile_prob"], rec["category"], rec["rank"])   # 99.2 High 66
+```
+
+**Full install — score novel structures** (adds ADMET-AI + RDKit; first run downloads
+the ADMET-AI models):
+
+```bash
+pip install "ile-predict[full] @ git+https://github.com/drmehmettatli/ile-predict.git"
+# or from a clone:  pip install -r requirements-full.txt && pip install -e '.[full]'
+
+# a SMILES, or any drug not in the bundled tables, is computed on the fly:
 ile-predict --smiles "CCN(CC)CC(=O)Nc1c(C)cccc1C" --out results.csv
 ```
 
@@ -64,7 +99,9 @@ real drugs — so it is excluded from the primary model. See [`docs/methods.md`]
 - Reference label set: `data/reference_labels.csv` (76 drugs, expert-assigned from
   ILE literature consensus — **replace/extend with a systematic review for production use**).
 - Scored compound panel: `data/panel_scored.csv` (209 agents across 31 classes).
-- Interactive dashboard: `app/dashboard.html` (self-contained, open in a browser).
+- Approved-drug screen: `data/approved_drugs_scored.csv` (2,845 drugs, scored and
+  ranked — the set used in the manuscript; powers offline lookup).
+- Interactive search dashboard: `app/dashboard.html` (self-contained, open in a browser).
 - Reported performance: leave-one-out cross-validated ROC-AUC ≈ **0.93**.
 
 ## Roadmap

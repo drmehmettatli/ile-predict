@@ -1,6 +1,4 @@
-admet_ai>=1.3.0
-rdkit>=2023.9
-scikit-learn>=1.3
-pubchempy>=1.0.4
+# Core (light) install — enough for offline lookup of the bundled agents and recalibration.
 pandas>=2.0
 numpy>=1.24
+scikit-learn>=1.3

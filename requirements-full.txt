@@ -1,0 +1,5 @@
+# Full stack — needed only to score NOVEL structures (name/SMILES not in the bundled tables).
+-r requirements.txt
+admet_ai>=1.3.0
+rdkit>=2023.9
+pubchempy>=1.0.4
