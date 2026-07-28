@@ -25,8 +25,8 @@ emulsion therapy, directly from its structure. It combines
 | You want to… | Use | Install |
 |---|---|---|
 | **Look up a named drug** (score, category, rank, caveats) | the **search dashboard** — `app/dashboard.html`, open in any browser | none |
-| Look up / batch drugs on the command line or in Python | the **light** package (`ile-predict "lurasidone, nimodipine"`) | `pip install ile-predict` |
-| **Score a novel structure** (a SMILES or a drug not yet bundled) | the **full** stack, or the notebook below | `pip install "ile-predict[full]"` |
+| Look up / batch drugs on the command line or in Python | the **light** package (`ile-predict "lurasidone, nimodipine"`) | `pip install "ile-predict @ git+https://github.com/drmehmettatli/ile-predict.git"` |
+| **Score a novel structure** (a SMILES or a drug not yet bundled) | the **full** stack, or the notebook below | `pip install "ile-predict[full] @ git+https://github.com/drmehmettatli/ile-predict.git"` |
 | Score novel structures with **zero local install** | the Colab notebook → | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb) |
 
 The dashboard and the light package answer instantly for **~2,900 pre-scored agents**
