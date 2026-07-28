@@ -72,6 +72,17 @@ def _approved() -> pd.DataFrame:
     return d
 
 
+@functools.lru_cache(maxsize=1)
+def _aliases() -> dict:
+    """Normalised alias -> canonical bundled name (common abbreviations, brand and
+    street names, e.g. thc->dronabinol, asa->aspirin, seroquel->quetiapine)."""
+    p = _DATA / "aliases.csv"
+    if not p.exists():
+        return {}
+    d = pd.read_csv(p)
+    return {_norm(a): str(c) for a, c in zip(d["alias"], d["canonical"])}
+
+
 def lookup(name: str) -> dict | None:
     """Return a normalised scored record for ``name``, or ``None`` if not bundled.
 
@@ -84,6 +95,15 @@ def lookup(name: str) -> dict | None:
     if not key:
         return None
 
+    # resolve a common alias (thc, cbd, asa, brand names...) to its canonical name,
+    # unless the typed token is itself a bundled entry
+    alias_of = None
+    if key not in set(_panel()["_key"]) and key not in set(_approved()["_key"]):
+        canon = _aliases().get(key)
+        if canon:
+            alias_of = canon
+            key = _norm(canon)
+
     pan = _panel()
     hit = pan[pan["_key"] == key]
     if not hit.empty:
@@ -94,7 +114,7 @@ def lookup(name: str) -> dict | None:
         arow = app[app["_key"] == key]
         rank = int(arow["rank"].iloc[0]) if not arow.empty else None
         return {
-            "query": name, "matched": r["name"], "source": "panel",
+            "query": name, "matched": r["name"], "alias_of": alias_of, "source": "panel",
             "class": _clean(r.get("cls")), "logD": _num(r, "logD"), "Vd": _num(r, "Vd"),
             "MW": _num(r, "MW"), "PPB": _num(r, "PPB"), "theory_score": _num(r, "theory_score"),
             "ile_prob": round(prob, 1), "category": _category(prob),
@@ -108,7 +128,7 @@ def lookup(name: str) -> dict | None:
         r = hit.iloc[0]
         prob = float(r["ile_prob"])
         return {
-            "query": name, "matched": r["name"], "source": "approved_drugs",
+            "query": name, "matched": r["name"], "alias_of": alias_of, "source": "approved_drugs",
             "class": None, "logD": _num(r, "logD"), "Vd": _num(r, "Vd"),
             "MW": _num(r, "MW"), "PPB": _num(r, "PPB"), "theory_score": _num(r, "theory_score"),
             "ile_prob": round(prob, 1), "category": _clean(r.get("category")) or _category(prob),
