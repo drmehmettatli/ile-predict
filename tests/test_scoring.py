@@ -42,3 +42,37 @@ def test_loo_cv_auc_perfect_on_separable():
     y = np.array([1, 1, 1, 1, 0, 0, 0, 0])
     auc = CalibratedILEModel().loo_cv_auc(logd, y)
     assert auc >= 0.9
+
+
+# ---- offline lookup (no network / no ADMET-AI) --------------------------------
+
+def test_lookup_known_agent_matches_manuscript():
+    from ile_predict import lookup
+    r = lookup("lurasidone")
+    assert r is not None
+    assert r["ile_prob"] == 99.2
+    assert r["category"] == "High"
+    assert r["rank"] == 66 and r["n_ranked"] == 2845
+
+
+def test_lookup_is_case_and_paren_insensitive():
+    from ile_predict import lookup
+    assert lookup("VERAPAMIL") is not None
+    assert lookup("ergocalciferol (D2)") is not None
+
+
+def test_lookup_hydrophilic_control_scores_low():
+    from ile_predict import lookup
+    assert lookup("metformin")["category"] == "Low"
+
+
+def test_lookup_unknown_returns_none_and_suggests():
+    from ile_predict import lookup
+    from ile_predict.lookup import suggest
+    assert lookup("definitely-not-a-drug-xyz") is None
+    assert "lurasidone" in suggest("lurasi")
+
+
+def test_bundled_count_is_large():
+    from ile_predict import count_bundled
+    assert count_bundled() > 2500
