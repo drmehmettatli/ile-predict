@@ -54,6 +54,11 @@ def _clean(x):
     return str(x).strip()
 
 
+def _confidence_policy(ad_flag: str | None) -> str:
+    f = (ad_flag or "").lower()
+    return "low" if "domain-edge" in f else "standard"
+
+
 @functools.lru_cache(maxsize=1)
 def _panel() -> pd.DataFrame:
     d = pd.read_csv(_DATA / "panel_scored.csv")
@@ -120,6 +125,8 @@ def lookup(name: str) -> dict | None:
             "ile_prob": round(prob, 1), "category": _category(prob),
             "ad_flag": _clean(r.get("ad_flag")) or _ad_from_mw(_num(r, "MW")),
             "rank": rank, "n_ranked": len(app) if rank else None, "note": _clean(r.get("note")),
+            "status": "bundled-lookup",
+            "confidence_policy": _confidence_policy(_clean(r.get("ad_flag")) or _ad_from_mw(_num(r, "MW"))),
         }
 
     app = _approved()
@@ -135,6 +142,8 @@ def lookup(name: str) -> dict | None:
             "ad_flag": _clean(r.get("ad_flag")) or _ad_from_mw(_num(r, "MW")),
             "rank": int(r["rank"]) if "rank" in r and not pd.isna(r["rank"]) else None,
             "n_ranked": len(app), "note": None,
+            "status": "bundled-lookup",
+            "confidence_policy": _confidence_policy(_clean(r.get("ad_flag")) or _ad_from_mw(_num(r, "MW"))),
         }
     return None
 

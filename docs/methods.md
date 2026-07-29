@@ -26,6 +26,8 @@ A logistic regression is fit on a reference set of drugs labelled as ILE
 *responders* / *non-responders* from literature consensus (`data/reference_labels.csv`).
 Performance is reported as **leave-one-out cross-validated ROC-AUC** (honest for the
 small sample): logD-only ≈ 0.93; raw logP ≈ 0.90; the mechanistic theory score ≈ 0.92.
+Calibration stability should also be monitored with stratified/repeated CV, not only
+single-point LOO.
 
 ### Why volume of distribution is excluded from the primary model
 Adding `log10(Vd)` raises AUC slightly (~0.95) but its fitted coefficient is
@@ -41,15 +43,31 @@ solvents) or MW >600 (large natural products, depot esters) are flagged
 `domain-edge` and treated as unreliable — a low score there means "uncertain", not
 "not a candidate" (e.g. aconitine, veratridine).
 
-## 5. Mechanism caveats (score ≠ clinical benefit)
+## 5. Prediction uncertainty
+The calibrated probability can be accompanied by bootstrap confidence intervals.
+Interpretation should prioritize uncertainty width and applicability-domain status,
+not only point probability.
+
+## 6. Mechanism caveats (score ≠ clinical benefit)
 High lipophilicity does not imply ILE benefit when the toxic mechanism is not
 reversible by lowering free parent drug: carbon monoxide (carboxyhaemoglobin),
 vitamin D (downstream hypercalcaemia via calcitriol), aliphatic hydrocarbons
 (aspiration pneumonitis, a local injury). Volatile hydrocarbons additionally have
 distinct redistribution/exhalation kinetics.
 
-## 6. Known limitations
+## 7. Known limitations (structured)
 Labels are expert-assigned literature consensus, not a single validated gold
-standard; residual false positives (e.g. warfarin, digoxin — high logD but specific
-antidotes) are handled by a clinical-note layer, not the score. Calibration to
-measured *in-vitro* sequestration data is the recommended next step.
+standard.
+
+### 7.1 Label limitations
+- Coverage is limited and may not represent all toxin classes evenly.
+- Evidence quality is heterogeneous across compounds.
+
+### 7.2 Model limitations
+- logD-only calibration is robust but still vulnerable to dataset shift.
+- Residual false positives can occur (e.g. warfarin, digoxin), especially when
+  specific antidotes or non-lipid mechanisms dominate outcomes.
+
+### 7.3 Operational limitations
+- `domain-edge` compounds should be treated as low-confidence predictions.
+- Calibration to measured *in-vitro* sequestration data remains the highest-priority next step.

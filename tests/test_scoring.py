@@ -1,7 +1,11 @@
 """Unit tests for the theory score and calibration model (no network / no ADMET-AI)."""
 import numpy as np
 from ile_predict.predict import theory_score, category
-from ile_predict.calibrate import CalibratedILEModel
+from ile_predict.calibrate import (
+    CalibratedILEModel,
+    reference_label_metadata,
+    reference_performance_report,
+)
 
 
 def test_theory_score_monotonic_in_logd():
@@ -88,3 +92,28 @@ def test_alias_resolution():
     assert d["alias_of"] is None
     # brand name resolves to canonical
     assert lookup("seroquel")["matched"].lower() == "quetiapine"
+
+
+def test_lookup_has_status_and_confidence_policy():
+    from ile_predict import lookup
+    r = lookup("lurasidone")
+    assert r["status"] == "bundled-lookup"
+    assert r["confidence_policy"] in {"standard", "low"}
+
+
+def test_predict_proba_interval_contains_point():
+    m = CalibratedILEModel().fit(
+        np.array([3.5, 3.0, 2.8, 0.2, -0.5, 0.0]),
+        np.array([1, 1, 1, 0, 0, 0]),
+    )
+    out = m.predict_proba_interval([3.0], n_bootstrap=40, random_state=1)
+    assert out["lower"][0] <= out["point"][0] <= out["upper"][0]
+
+
+def test_reference_helpers_return_expected_shape():
+    meta = reference_label_metadata()
+    assert isinstance(meta, dict)
+    assert meta.get("dataset") == "reference_labels"
+    report = reference_performance_report(min_group_n=4)
+    assert report["n_reference"] > 20
+    assert "stability" in report and "subgroups" in report
