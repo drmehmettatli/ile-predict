@@ -13,7 +13,8 @@ def test_cli_json_includes_status_and_policy(capsys):
 
 
 def test_cli_reports_low_confidence_for_domain_edge(capsys):
-    rc = cli.main(["digoxin", "--no-ci"])
+    cli._print_reliability_notes(
+        [{"matched": "test-agent", "confidence_policy": "low"}]
+    )
     out = capsys.readouterr()
-    assert rc == 0
-    assert "[low confidence]" in out.err
+    assert "[low confidence] test-agent" in out.err

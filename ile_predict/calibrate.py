@@ -57,20 +57,33 @@ class CalibratedILEModel:
         x = np.asarray(logd, float)
         point = self.predict_proba(x)
         rng = np.random.default_rng(random_state)
-        boots = np.zeros((n_bootstrap, len(x)), dtype=float)
+        boots = []
         n = len(self._train_y)
-        for i in range(n_bootstrap):
+        attempts = 0
+        max_attempts = n_bootstrap * 5
+        while len(boots) < n_bootstrap and attempts < max_attempts:
+            attempts += 1
             idx = rng.integers(0, n, size=n)
-            m = CalibratedILEModel().fit(self._train_logd[idx], self._train_y[idx])
-            boots[i] = m.predict_proba(x)
-        lo = np.quantile(boots, alpha / 2.0, axis=0)
-        hi = np.quantile(boots, 1.0 - alpha / 2.0, axis=0)
+            ys = self._train_y[idx]
+            if len(np.unique(ys)) < 2:
+                continue
+            m = CalibratedILEModel().fit(self._train_logd[idx], ys)
+            boots.append(m.predict_proba(x))
+        if not boots:
+            lo = point
+            hi = point
+            used = 0
+        else:
+            boot_arr = np.asarray(boots, dtype=float)
+            lo = np.quantile(boot_arr, alpha / 2.0, axis=0)
+            hi = np.quantile(boot_arr, 1.0 - alpha / 2.0, axis=0)
+            used = len(boots)
         return {
             "point": point,
             "lower": lo,
             "upper": hi,
             "level": 1.0 - alpha,
-            "n_bootstrap": n_bootstrap,
+            "n_bootstrap": used,
         }
 
     @classmethod
