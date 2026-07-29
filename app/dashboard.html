@@ -5,7 +5,7 @@
 .wrap{max-width:1220px;margin:0 auto;padding:22px 18px 70px}
 header h1{font-size:23px;margin:0 0 4px}header p{margin:0;color:var(--mut);font-size:14px}
 .disc{background:#fff7ed;border:1px solid #f0d5a8;color:#7a4e00;border-radius:10px;padding:11px 14px;font-size:12.5px;margin:16px 0}
-.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin:16px 0}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin:16px 0}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px}
 .kpi .n{font-size:23px;font-weight:700}.kpi .l{font-size:11.5px;color:var(--mut)}
 .kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}.kpi.a .n{color:var(--acc)}
@@ -29,17 +29,19 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .metrics td{padding:4px 6px;border-bottom:1px solid var(--line)}.metrics td:last-child{text-align:right;font-weight:600}
 .meth{font-size:13px;color:#33414f}.meth code{background:#eef1f4;padding:1px 6px;border-radius:5px;font-size:12px}.meth h3{font-size:13.5px;margin:13px 0 3px}
 .foot{color:var(--mut);font-size:11px;margin-top:8px}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:820px){.grid2{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.hidem{display:none}}
 </style></head><body><div class="wrap">
 <header><h1>Lipid Emülsiyonu (ILE) Yatkınlık Tahmin &amp; Kalibrasyon Sistemi</h1>
-<p>ADMET-AI (logD, Vd) + lipid-sink teorisi + ILE-kanıt kalibrasyonu · v3.0 KONSOLİDE · 209 etken madde / 31 sınıf (ilaçlar, KBRN ajanları, hidrokarbonlar, vitaminler, bitkisel alkaloidler)</p></header>
+<p>ADMET-AI (logD, Vd) + lipid-sink teorisi + ILE-kanıt kalibrasyonu · v0.2.0 · <b>arama kutusu ~2.900 ajanı kapsar</b>: 2.845 onaylı ilaç (makale seti) + 209 maddelik küratör paneli / 31 sınıf (ilaçlar, KBRN ajanları, hidrokarbonlar, vitaminler, bitkisel alkaloidler). Aşağıdaki grafik ve tablo yalnızca 209 maddelik paneli gösterir.</p></header>
 <div class="disc"><b>⚠ Araştırma/eğitim prototipi — klinik karar aracı DEĞİLDİR.</b> Skor yalnızca fizikokimyasal yatkınlığı tahmin eder; klinik etkinliği, zehirlenme şiddetini, spesifik antidotu ya da toksin mekanizmasının reversibilitesini (ör. D-vitamini hiperkalsemisi, CO-hemoglobin) yansıtmaz. "domain-kenarı" işaretli maddelerde (çok büyük/küçük molekül) tahmin GÜVENİLMEZDİR. Gerçek ILE kararı güncel kılavuzla verilir.</div>
 <div class="kpis">
-<div class="kpi a"><div class="n">209</div><div class="l">Etken madde</div></div>
+<div class="kpi a"><div class="n" id="kpiAll">2.898</div><div class="l">Aranabilir ajan (2.845 onaylı ilaç + 209 panel, tekilleştirilmiş)</div></div>
+<div class="kpi a"><div class="n">209</div><div class="l">Küratör paneli (grafik + tablo)</div></div>
 <div class="kpi a"><div class="n">0.932</div><div class="l">LOO-CV AUC</div></div>
-<div class="kpi hi"><div class="n">114</div><div class="l">Yüksek</div></div>
-<div class="kpi md"><div class="n">40</div><div class="l">Orta</div></div>
-<div class="kpi lo"><div class="n">55</div><div class="l">Düşük</div></div></div>
+<div class="kpi hi"><div class="n">114</div><div class="l">Yüksek (panel)</div></div>
+<div class="kpi md"><div class="n">40</div><div class="l">Orta (panel)</div></div>
+<div class="kpi lo"><div class="n">55</div><div class="l">Düşük (panel)</div></div></div>
 <div class="grid2">
 <div class="card"><h2>logD × Vd haritası</h2>
 <p class="sub">X: logD₇.₄ · Y: Vd (log) · renk: kategori · ○ = kalibrasyon setinde · △ = domain-kenarı</p>
@@ -51,14 +53,15 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 <tr><td>Toplam sınıf</td><td>31</td></tr>
 <tr><td>Yüksek yatkınlık</td><td>114</td></tr></table>
 <p class="note">Not: Vd, lipofiklikle confounded olduğundan birincil model yalnız logD üzerinedir.</p></div></div>
-<div class="card"><h2>Konsolide tablo (209 madde)</h2>
+<div class="card"><h2>Küratör paneli tablosu (209 madde)</h2>
+<p class="sub">Bu tablo yalnızca 31 sınıfa dağılmış 209 maddelik küratör panelidir. 2.845 onaylı ilaç için yukarıdaki arama kutusunu kullanın.</p>
 <div style="overflow:auto;max-height:620px"><table id="tbl"><thead><tr>
 <th data-k="name">Etken madde</th><th data-k="cls">Sınıf</th>
 <th data-k="logP" class="num hidem">logP</th><th data-k="logD" class="num">logD</th>
 <th data-k="vd" class="num hidem">Vd</th><th data-k="score" class="num">Teori</th>
 <th data-k="prob" class="num">Olasılık</th><th data-k="cat">Kategori</th><th data-k="note" class="hidem">Klinik not</th></tr></thead><tbody></tbody></table></div></div>
 <div class="card meth"><h2>Yöntem ve kritik sınırlar</h2>
-<p><b>Girdi:</b> 209 madde, PubChem SMILES, ADMET-AI (Chemprop GNN, TDC) ile logP/logD/Vd/PPB. <b>Skor:</b> <code>Lipo=clip(logD/3)·(0.6+0.4·Vd-katkısı)</code>; <b>kalibre olasılık</b> logD-only lojistik (LOO-CV AUC 0.932).</p>
+<p><b>Girdi:</b> küratör paneli 209 madde (grafik/tablo) ve 2.845 onaylı ilaç (arama kutusu), PubChem SMILES, ADMET-AI (Chemprop GNN, TDC) ile logP/logD/Vd/PPB. <b>Skor:</b> <code>Lipo=clip(logD/3)·(0.6+0.4·Vd-katkısı)</code>; <b>kalibre olasılık</b> logD-only lojistik (LOO-CV AUC 0.932).</p>
 <h3>Mekanizma ≠ lipofiklik uyarıları</h3><p>Yüksek logD her zaman ILE faydası anlamına gelmez: <b>karbonmonoksit</b> (COHb; O2/HBO), <b>D-vitamini</b> (zarar downstream hiperkalsemi), <b>aspirasyon riskli alifatik hidrokarbonlar</b> (lokal akciğer hasarı) yüksek skorlasa da mekanizma ILE'ye uygun değildir. <b>Uçucu hidrokarbonlar</b> uçuculuk nedeniyle farklı kinetiktedir.</p>
 <h3>Domain-kenarı</h3><p>MW&gt;600 (akonitin, veratridin, oleandrin, ergotamin) veya &lt;100 (CO, küçük çözücüler) maddelerde ADMET-AI eğitim alanı dışıdır; tahmin belirsizdir — "düşük skor" ≠ "aday değil".</p>
 <h3>Öne çıkan hipotez</h3><p><b>Oleandrin</b> (zakkum): digoksinden daha lipofilik (logD 3.06 vs 2.37), spesifik Fab çoğu yerde rutin değil → güçlü beyaz-alan adayı. Ayrıca lurasidon, ziprasidon, dihidropiridin KKB'ler (lerkanidipin/nimodipin) tutarlı sinyaller.</p>
@@ -177,10 +180,12 @@ const ADATA=[{"n":"Lumefantrine co-artemether","logD":7.93,"vd":118.53,"mw":529.
       warn+(note?'<div class="note"><b>Not:</b> '+note+'</div>':'')+
       '<div class="note">Bu yalnızca fizikokimyasal yatkınlıktır — klinik karar aracı değildir.</div></div>';
   }
+  const _allN=new Set([...ADATA.map(r=>norm(r.n)),...(typeof PANEL!=="undefined"?PANEL.map(r=>norm(r.name)):[])]).size;
+  const _kpi=document.getElementById('kpiAll'); if(_kpi) _kpi.textContent=_allN.toLocaleString('tr-TR');
   const card=document.createElement('div');card.id='lk';
   card.innerHTML='<h2>İlaç ara — anında yatkınlık skoru</h2>'+
     '<p class="sub">İsim yazın (ör. lurasidone, oleandrin, verapamil). '+
-    (ADATA.length+ (typeof DATA!=="undefined"?0:0))+'+ önceden skorlanmış ajan — kurulum gerektirmez.</p>'+
+    'Toplam '+_allN.toLocaleString('tr-TR')+' önceden skorlanmış ajan ('+ADATA.length+' onaylı ilaç + 209 küratör paneli) — kurulum gerektirmez.</p>'+
     '<div class="row"><input id="lkq" placeholder="etken madde adı…" autocomplete="off"></div>'+
     '<div class="ans" id="lkans"></div>'+
     '<div class="foot">Kaynak: 209 küratör paneli + 2845 onaylı ilaç (makale seti). Çevrimdışı, tarayıcıda çalışır.</div>';
