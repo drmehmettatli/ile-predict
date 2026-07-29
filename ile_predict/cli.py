@@ -20,7 +20,8 @@ from . import __version__
 from .lookup import lookup, suggest, count_bundled
 
 _COLS = ["query", "matched", "source", "class", "logD", "Vd", "MW",
-         "theory_score", "ile_prob", "category", "ad_flag", "rank", "note"]
+         "theory_score", "ile_prob", "ci_low", "ci_high", "category", "ad_flag",
+         "confidence_policy", "status", "rank", "note"]
 
 _DISCLAIMER = "[!] Research/education prototype. NOT a clinical decision tool."
 _COLAB = "https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb"
@@ -51,12 +52,15 @@ def _score_novel(pairs):
     recs = []
     for (lab, _), (_, row) in zip(keep, df.iterrows()):
         prob = float(row["ile_prob"])
+        ad_flag = row["ad_flag"]
         recs.append({
             "query": lab, "matched": lab, "source": "computed",
             "class": None, "logD": round(float(row["logD"]), 3),
             "Vd": round(float(row["Vd"]), 3), "MW": round(float(row["MW"]), 1),
             "theory_score": round(float(row["theory_score"]), 1), "ile_prob": round(prob, 1),
-            "category": category(prob), "ad_flag": row["ad_flag"], "rank": None, "note": None,
+            "category": category(prob), "ad_flag": ad_flag, "rank": None, "note": None,
+            "status": "computed-from-structure",
+            "confidence_policy": "low" if "domain-edge" in str(ad_flag).lower() else "standard",
         })
     return recs
 
@@ -89,6 +93,8 @@ def main(argv=None):
     ap.add_argument("--smiles", help="comma-separated SMILES (forces full-stack scoring)")
     ap.add_argument("--out", help="write full results to CSV")
     ap.add_argument("--json", action="store_true", help="print results as JSON")
+    ap.add_argument("--no-ci", action="store_true",
+                    help="skip bootstrap confidence intervals around calibrated probability")
     ap.add_argument("--no-compute", action="store_true",
                     help="offline only: never fall back to ADMET-AI for unknown names")
     ap.add_argument("--version", action="version", version=f"ile-predict {__version__}")
@@ -126,6 +132,8 @@ def main(argv=None):
         print(_novel_help(unresolved, kind="name"), file=sys.stderr)
         return 1
 
+    _attach_confidence(rows, enabled=not args.no_ci)
+
     if args.json:
         print(json.dumps(rows, ensure_ascii=False, indent=2))
     else:
@@ -136,6 +144,7 @@ def main(argv=None):
         sug = suggest(n)
         tip = f"  did you mean: {', '.join(sug)}" if sug else ""
         print(f"[not found] {n}{tip}", file=sys.stderr)
+    _print_reliability_notes(rows)
 
     if args.out:
         try:
@@ -147,12 +156,39 @@ def main(argv=None):
     return 0
 
 
+def _attach_confidence(rows, enabled=True):
+    if not enabled or not rows:
+        return
+    try:
+        from .calibrate import CalibratedILEModel
+        model = CalibratedILEModel.from_reference()
+        to_score = [r for r in rows if r.get("logD") is not None]
+        if not to_score:
+            return
+        interval = model.predict_proba_interval([r["logD"] for r in to_score], n_bootstrap=150)
+        for i, r in enumerate(to_score):
+            r["ci_low"] = round(float(interval["lower"][i] * 100.0), 1)
+            r["ci_high"] = round(float(interval["upper"][i] * 100.0), 1)
+    except Exception:
+        return
+
+
 def _novel_help(items, kind):
     n = count_bundled()
     head = f"None of the requested {kind}(s) are in the {n} bundled agents, "
     return (head + "and the full prediction stack is not installed.\n"
             "  To score novel structures locally:  pip install 'ile-predict[full]'\n"
             f"  Or run with zero local setup in Colab:\n    {_COLAB}")
+
+
+def _print_reliability_notes(rows):
+    for r in rows:
+        if r.get("confidence_policy") == "low":
+            label = r.get("matched") or r.get("query") or "item"
+            print(
+                f"[low confidence] {label}: outside ADMET-AI domain; treat probability as uncertain.",
+                file=sys.stderr,
+            )
 
 
 if __name__ == "__main__":

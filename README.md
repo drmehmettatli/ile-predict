@@ -29,6 +29,11 @@ emulsion therapy, directly from its structure. It combines
 | **Score a novel structure** (a SMILES or a drug not yet bundled) | the **full** stack, or the notebook below | `pip install "ile-predict[full] @ git+https://github.com/drmehmettatli/ile-predict.git"` |
 | Score novel structures with **zero local install** | the Colab notebook → | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb) |
 
+Quick decision rule:
+- If you only need a named drug score, use the dashboard or light install.
+- If the name is not bundled, use full install (or Colab) for on-the-fly ADMET scoring.
+- If output is marked `domain-edge`, treat the probability as **low confidence**.
+
 The dashboard and the light package answer instantly for **~2,900 pre-scored agents**
 (209-agent curated panel + 2,845 approved drugs) **with no heavy dependencies** — the
 common "what does *this drug* score?" question needs no ADMET-AI, no PyTorch, no
@@ -40,7 +45,7 @@ download. Only a genuinely novel structure invokes the full prediction stack.
 2. **Predict** — ADMET-AI computes `logP`, `logD7.4`, `Vd`, plasma protein binding.
 3. **Score** — a mechanistic *theory score* (lipophilicity gate × Vd modulator) **and**
    a *calibrated probability* from the logistic model, reported as the **TATLI amenability
-   score** (Toxin Amenability To Lipid Infusion).
+   score** (Toxin Amenability To Lipid Infusion), with a bootstrap uncertainty interval.
 4. **Flag** — molecules outside ADMET-AI's drug-like domain (MW <100 or >600) are
    marked `domain-edge`; a low score there means "unreliable", not "not a candidate".
 
@@ -113,6 +118,12 @@ real drugs — so it is excluded from the primary model. See [`docs/methods.md`]
 - Expand the calibration label set via a systematic review of ILE case reports.
 - Recalibrate against measured *in-vitro* lipid:aqueous sequestration data.
 - Package a hosted web app (Streamlit/FastAPI) and a DrugBank/ChEMBL-scale screen.
+
+## Data/version notes
+
+- Reference calibration labels: `data/reference_labels.csv`
+- Reference label metadata/version: `data/reference_labels.metadata.json`
+- Keep the metadata version in sync whenever labels or evidence grading changes.
 
 ## How to cite
 

@@ -1,0 +1,10 @@
+{
+  "dataset": "reference_labels",
+  "version": "1.0.0",
+  "label_type": "literature-consensus (expert-assigned)",
+  "updated_at": "2026-07-29",
+  "notes": [
+    "This set is the calibration label source for the logD model.",
+    "Version increments are expected when labels are added, corrected, or evidence grading changes."
+  ]
+}
