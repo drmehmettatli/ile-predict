@@ -6,7 +6,8 @@ authors:
   - family-names: "Tatli"
     given-names: "Mehmet"
     orcid: "https://orcid.org/0000-0001-5907-9161"
-    affiliation: "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience (PhD Programme), Van Yüzüncü Yıl University, Van, Türkiye"
+    affiliation: "Department of Emergency Medicine, University of Health Sciences, Van Training and Research Hospital, Van, Türkiye; Department of Neuroscience, Institute of Health Sciences, Van Yüzüncü Yıl University, Van, Türkiye"
+    email: "mehmet.tatli@sbu.edu.tr"
 abstract: >-
   ile-predict estimates how amenable a toxic agent is to intravenous lipid
   emulsion (ILE, "lipid rescue") therapy directly from chemical structure.
@@ -15,7 +16,16 @@ abstract: >-
   reference set converts effective lipophilicity (logD7.4) into a probability of
   ILE responsiveness. Research and education prototype; not a clinical decision
   tool.
-version: 0.1.0
+version: 0.2.2
+date-released: "2026-08-04"
+doi: "10.5281/zenodo.21547460"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21547460"
+    description: "Concept DOI, always resolves to the latest version"
+  - type: doi
+    value: "10.5281/zenodo.21669694"
+    description: "Version DOI for v0.2.1"
 license: MIT
 repository-code: "https://github.com/drmehmettatli/ile-predict"
 keywords:
@@ -43,3 +53,12 @@ references:
     year: 2024
     doi: "10.1093/bioinformatics/btae416"
     notes: "btae416"
+  - type: software
+    title: "tatli-mms: comparative selection of sequestration modalities in acute poisoning"
+    authors:
+      - family-names: "Tatli"
+        given-names: "Mehmet"
+        orcid: "https://orcid.org/0000-0001-5907-9161"
+    repository-code: "https://github.com/drmehmettatli/tatli-mms"
+    year: 2026
+    notes: "Sister repository; extends this framework from lipid emulsion alone to a four-modality comparison."

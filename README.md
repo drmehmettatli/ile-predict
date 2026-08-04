@@ -1,6 +1,6 @@
 # ile-predict
 
-**The TATLI framework — Toxin Amenability To Lipid Infusion.**
+**The TATLI framework: Toxin Amenability To Lipid Infusion.**
 **Predicting intravenous lipid emulsion (ILE / "lipid rescue") amenability from chemical structure.**
 
 Developed in the **Van Computational Emergency Toxicology** group at Van Yüzüncü Yıl
@@ -13,7 +13,7 @@ emulsion therapy, directly from its structure. It combines
 (effective lipophilicity `logD7.4`, volume of distribution) with a logistic model
 **calibrated against a literature-consensus ILE-evidence reference set**.
 
-> ⚠️ **Research / education prototype — NOT a clinical decision tool.**
+> ⚠️ **Research / education prototype. NOT a clinical decision tool.**
 > The score reflects only *physicochemical* amenability under the lipid-sink
 > hypothesis. It does **not** account for clinical severity, available specific
 > antidotes, or whether the toxin's mechanism is even reversible by lowering free
@@ -30,31 +30,31 @@ emulsion therapy, directly from its structure. It combines
 | Score novel structures with **zero local install** | the Colab notebook → | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/drmehmettatli/ile-predict/blob/main/notebooks/ile_predict_colab.ipynb) |
 
 The dashboard and the light package answer instantly for **~2,900 pre-scored agents**
-(209-agent curated panel + 2,845 approved drugs) **with no heavy dependencies** — the
+(209-agent curated panel + 2,845 approved drugs) **with no heavy dependencies**. The
 common "what does *this drug* score?" question needs no ADMET-AI, no PyTorch, no
 download. Only a genuinely novel structure invokes the full prediction stack.
 
 ## What it does
 
-1. **Structure in** — a drug/toxin name (resolved to SMILES via PubChem) or a raw SMILES.
-2. **Predict** — ADMET-AI computes `logP`, `logD7.4`, `Vd`, plasma protein binding.
-3. **Score** — a mechanistic *theory score* (lipophilicity gate × Vd modulator) **and**
+1. **Structure in**: a drug/toxin name (resolved to SMILES via PubChem) or a raw SMILES.
+2. **Predict**: ADMET-AI computes `logP`, `logD7.4`, `Vd`, plasma protein binding.
+3. **Score**: a mechanistic *theory score* (lipophilicity gate × Vd modulator) **and**
    a *calibrated probability* from the logistic model, reported as the **TATLI amenability
    score** (Toxin Amenability To Lipid Infusion).
-4. **Flag** — molecules outside ADMET-AI's drug-like domain (MW <100 or >600) are
+4. **Flag**: molecules outside ADMET-AI's drug-like domain (MW <100 or >600) are
    marked `domain-edge`; a low score there means "unreliable", not "not a candidate".
 
 ## Quick start
 
-**Zero install — the dashboard.** Open
+**Zero install, the dashboard.** Open
 **<https://drmehmettatli.github.io/ile-predict/>** (or download `app/dashboard.html`
-and open it in any browser — it is self-contained and runs offline). Type a drug name in the search box to get its amenability score, category,
+and open it in any browser; it is self-contained and runs offline). Type a drug name in the search box to get its amenability score, category,
 rank among 2,845 approved drugs, applicability-domain flag, and mechanism caveats.
 Common abbreviations and brand/street names resolve automatically (e.g. `THC` →
 dronabinol, `CBD` → cannabidiol, `ASA` → aspirin, `Seroquel` → quetiapine); the full
 map is `data/aliases.csv`.
 
-**Light install — instant offline lookup** (core only: pandas, numpy, scikit-learn):
+**Light install, instant offline lookup** (core only: pandas, numpy, scikit-learn):
 
 ```bash
 pip install "ile-predict @ git+https://github.com/drmehmettatli/ile-predict.git"
@@ -71,7 +71,7 @@ rec = lookup("lurasidone")
 print(rec["ile_prob"], rec["category"], rec["rank"])   # 99.2 High 66
 ```
 
-**Full install — score novel structures** (adds ADMET-AI + RDKit; first run downloads
+**Full install, score novel structures** (adds ADMET-AI + RDKit; first run downloads
 the ADMET-AI models):
 
 ```bash
@@ -97,16 +97,32 @@ The lipid-sink hypothesis says a circulating lipid phase sequesters drug in
 proportion to its effective lipophilicity. We therefore gate on `logD7.4` (not raw
 `logP`, which mis-ranks acidic/highly-bound drugs), and modulate by volume of
 distribution. The **calibrated model uses logD alone**: adding Vd nudges AUC up but
-flips its coefficient positive — an artefact of Vd/lipophilicity collinearity in
-real drugs — so it is excluded from the primary model. See [`docs/methods.md`](docs/methods.md).
+flips its coefficient positive, an artefact of Vd/lipophilicity collinearity in
+real drugs, so it is excluded from the primary model. See [`docs/methods.md`](docs/methods.md).
 
 - Reference label set: `data/reference_labels.csv` (76 drugs, expert-assigned from
-  ILE literature consensus — **replace/extend with a systematic review for production use**).
+  ILE literature consensus. **Replace/extend with a systematic review for production use**).
 - Scored compound panel: `data/panel_scored.csv` (209 agents across 31 classes).
 - Approved-drug screen: `data/approved_drugs_scored.csv` (2,845 drugs, scored and
-  ranked — the set used in the manuscript; powers offline lookup).
+  ranked; the set used in the manuscript; powers offline lookup).
 - Interactive search dashboard: `app/dashboard.html` (self-contained, open in a browser).
 - Reported performance: leave-one-out cross-validated ROC-AUC ≈ **0.93**.
+
+## Sister repository: tatli-mms
+
+`ile-predict` answers one question: how amenable is this agent to a lipid sink?
+[**tatli-mms**](https://github.com/drmehmettatli/tatli-mms) asks the comparative
+question instead, scoring four sequestration modalities side by side (lipid emulsion,
+albumin, haemodialysis, therapeutic plasma exchange) and reporting which one the
+physicochemistry favours. It is kept separate on purpose so that the lipid-focused
+scope of this repository stays intact.
+
+Two things there are worth knowing if you use this package. First, tatli-mms can run
+its ILE column either from the calibrated model here or from a label-free theory ramp,
+and it reports the sensitivity of every conclusion to that choice. Second, its
+validation against EXTRIP recommendations shows that physicochemical scores track
+whether a toxin is *removable* far better than whether removal is *indicated*, which
+is a limit that applies to this package as well.
 
 ## Roadmap
 

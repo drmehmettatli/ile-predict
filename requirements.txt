@@ -1,4 +1,4 @@
-# Core (light) install — enough for offline lookup of the bundled agents and recalibration.
+# Core (light) install: enough for offline lookup of the bundled agents and recalibration.
 pandas>=2.0
 numpy>=1.24
 scikit-learn>=1.3
