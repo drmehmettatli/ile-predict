@@ -8,7 +8,7 @@ a literature-consensus ILE-evidence reference set.
 
 NOT A CLINICAL DECISION TOOL. Hypothesis generation for research only.
 """
-__version__ = "0.2.0"
+__version__ = "0.2.2"
 
 # Light-weight, always-available API (offline lookup + calibration).
 from .lookup import lookup, suggest, count_bundled       # noqa: F401
